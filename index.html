@@ -480,11 +480,27 @@
                 <svg width="18px" height="18px" class="icon"><use href="./images/svg/sprite/sprite.svg#icon-close-modal"  ></use></svg>         
                 </button>
             <p class="lead">Оставьте свои данные, мы вам перезвоним</p>
-
-            <input type=" text " name="user-name " id="user-name " placeholder="Имя " class="modal-input ">
-            <input type="text " name="user-phone " id="user-phone " placeholder="Телефон " class="modal-input ">
-            <input type="text " name="user-email " id="user-email " placeholder="Почта " class="modal-input ">
-
+            <div class="inp-wrapper">
+                <svg width="18px" height="18px" class="icon">
+                    <use href="./images/svg/sprite/sprite.svg#icon-person-modal"></use>
+                    </svg>
+                <input type=" text " name="user-name" id="user-name" placeholder="" class="modal-input ">
+                <label for="user-name" class="input-label">Имя</label>
+            </div>
+            <div class="inp-wrapper">
+                <svg width="18px" height="18px" class="icon">
+                <use href="./images/svg/sprite/sprite.svg#icon-phone-modal"></use>
+            </svg>
+                <input type="text " name="user-phone" id="user-phone" placeholder="" class="modal-input ">
+                <label for="user-phone" class="input-label">Телефон</label>
+            </div>
+            <div class="inp-wrapper">
+                <svg width="18px" height="18px" class="icon">
+                <use href="./images/svg/sprite/sprite.svg#icon-email-modal"></use>
+            </svg>
+                <input type="text " name="user-email" id="user-email" placeholder="" class="modal-input ">
+                <label for="user-email" class="input-label">Почта</label>
+            </div>
             <textarea name="comment-box " id="comment-box " cols="30 " rows="10 " placeholder="Комментарий " class="modal-input-text "></textarea>
             <div class="agreement-wrapper">
                 <div class="checkbox-wrapper">
