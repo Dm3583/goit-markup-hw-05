@@ -990,6 +990,15 @@ body {
     margin-bottom: 28px;
 }
 
+.inp-wrapper>.icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal .modal-input:hover~.icon,
+.modal .modal-input:focus~.icon {
+    fill: var(--accent-color);
+}
+
 .modal .input-label {
     position: absolute;
 }
