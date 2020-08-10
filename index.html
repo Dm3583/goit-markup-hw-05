@@ -16,19 +16,17 @@
     <header class="site-header">
         <div class="container display-flex">
             <nav class="site-nav display-flex">
-                <a href="./index.html " class="logo link"><span lang="en" class="blue">Web </span
-            ><span lang="en" class="black">Studio</span></a
-          >
-          <ul class="list display-flex">
-            <li class="menu-item">
-              <a href=" " class="link active">Студия</a>
-                </li>
-                <li class="menu-item">
-                    <a href="./portfolio.html" class="link">Портфолио</a>
-                </li>
-                <li class="menu-item">
-                    <a href=" " class="link">Контакты</a>
-                </li>
+                <a href="./index.html " class="logo link"><span lang="en" class="blue">Web </span><span lang="en" class="black">Studio</span></a>
+                <ul class="list display-flex">
+                    <li class="menu-item">
+                        <a href=" " class="link active">Студия</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="./portfolio.html" class="link">Портфолио</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href=" " class="link">Контакты</a>
+                    </li>
                 </ul>
             </nav>
 
@@ -59,7 +57,7 @@
         <section class="hero overlay">
             <div class="container">
                 <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-                <button type="button" class="btn">Заказать услугу</button>
+                <button type="button" class="btn" data-modal-open>Заказать услугу</button>
             </div>
         </section>
 
@@ -476,6 +474,33 @@
             </div>
         </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="close-modal" data-modal-close>
+                <svg width="18px" height="18px" class="icon"><use href="./images/svg/sprite/sprite.svg#icon-close-modal"  ></use></svg>         
+                </button>
+            <p class="lead">Оставьте свои данные, мы вам перезвоним</p>
+
+            <input type=" text " name="user-name " id="user-name " placeholder="Имя " class="modal-input ">
+            <input type="text " name="user-phone " id="user-phone " placeholder="Телефон " class="modal-input ">
+            <input type="text " name="user-email " id="user-email " placeholder="Почта " class="modal-input ">
+
+            <textarea name="comment-box " id="comment-box " cols="30 " rows="10 " placeholder="Комментарий " class="modal-input-text "></textarea>
+            <div class="agreement-wrapper">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" name="agree" id="agree-checkbox" class="agreement-checkbox">
+                    <label for="styled-agree-checkbox" class="checkbox-agree-checkbox"></label>
+                </div>
+                <p class="agreement">Соглашаюсь с рассылкой и принимаю
+                    <a href=" " class="agreement-link"> Условия договора</a>
+                </p>
+            </div>
+            <button type="button " class="btn " data-modal-open>Отправить</button>
+        </div>
+
+    </div>
+
+    <script src="./js/modal.js "></script>
 </body>
 
 </html>
