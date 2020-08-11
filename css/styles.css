@@ -828,7 +828,7 @@ body {
 }
 
 .img-wrapper:hover .desc-text-animation,
-.link:focus .desc-text-animation {
+.portfolio-card>.link:focus .desc-text-animation {
     transform: translateY(-100%);
 }
 
