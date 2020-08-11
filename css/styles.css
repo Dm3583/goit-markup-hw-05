@@ -828,7 +828,7 @@ body {
 }
 
 .img-wrapper:hover .desc-text-animation,
-.img-wrapper:focus .desc-text-animation {
+.link:focus .desc-text-animation {
     transform: translateY(-100%);
 }
 
@@ -870,6 +870,9 @@ body {
     /* or 156% */
     letter-spacing: 0.03em;
 }
+
+
+/* modal window */
 
 .backdrop {
     position: fixed;
