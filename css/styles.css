@@ -869,6 +869,7 @@ body {
     line-height: 1.556;
     /* or 156% */
     letter-spacing: 0.03em;
+    overflow: hidden;
 }
 
 
