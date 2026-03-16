@@ -597,16 +597,13 @@ h3 {
   width: 100%;
   height: 100%;
   z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   background-color: var(--modal-overlay-color);
 
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  transition: opacity var(--standard-transition);
+  transition: opacity var(--standard-transition), visibility var(--standard-transition);
 }
 
 .modal-overlay.is-open {
@@ -616,15 +613,18 @@ h3 {
 }
 
 .modal {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: var(--modal-background-color);
   padding: 72px 24px 24px 24px;
   border-radius: 4px;
-  max-width: 408px;
-  width: 100%;
-  max-height: 584px;
+  width: 408px;
+  min-height: 584px;
   overflow-y: auto;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform var(--standard-transition);
 }
 
 /* #endregion */
@@ -655,27 +655,31 @@ h3 {
   color: var(--dark-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--accent-color);
-  transition: color var(--standard-transition), background-color var(--standard-transition),
-  border-color var(--standard-transition);
+  transition: background-color var(--standard-transition),
+  border var(--standard-transition),
+  color var(--standard-transition);
+  cursor: pointer;
 }
 .modal-btn:hover,
 .modal-btn:focus {
   color: white;
   background-color: var(--pressed-state-color);
-  border-color: var(--pressed-state-color);
+  border: none;
   cursor: pointer;
 }
 .modal-btn-icon {
   fill: currentColor;
+  transition: fill var(--standard-transition);
 }
 
 .modal-caption {
   color: var(--dark-color);
   margin-bottom: 16px;
+  text-align: center;
 }
 
-.modal-input-wrapper + .modal-input-wrapper {
-  margin-top: 8px;
+.modal-input-wrapper {
+  margin-bottom: 8px;
 }
 
 .modal-form-label {
@@ -691,7 +695,7 @@ h3 {
 .modal-form-input {
   width: 100%;
   height: 40px;
-  padding: 8px 16px 8px 34px;
+  padding: 8px 16px 8px 38px;
 
   color: var(--dark-color);
 
@@ -709,8 +713,8 @@ h3 {
 .modal-form-icon {
   position: absolute;
   top: 50%;
-  left: 0;
-  transform: translateY(-50%) translateX(16px);
+  left: 16px;
+  transform: translateY(-50%);
   fill: var(--dark-color);
   pointer-events: none;
 
@@ -721,7 +725,12 @@ h3 {
   fill: var(--primary-brand-color);
 }
 
+.modal-textarea-wrapper {
+  margin-bottom: 16px;
+}
+
 .modal-form-comment {
+  display: block;
   width: 100%;
   height: 120px;
   padding: 8px 16px;
@@ -732,7 +741,7 @@ h3 {
   background-color: transparent;
   resize: none;
 
-  color: var(--dark-color);
+  color: var(--modal-overlay-color);
 
   transition: border-color var(--standard-transition);
 }
@@ -746,8 +755,10 @@ h3 {
 .modal-form-agreement {
   display: block;
 
-  margin-top: 16px;
   margin-bottom: 24px;
+}
+
+.checkbox-label {
   color: var(--subtitle-text-color);
 }
 
@@ -762,22 +773,26 @@ h3 {
   border-radius: 2px;
   border: 1px solid var(--modal-overlay-color);
   cursor: pointer;
+  fill: transparent;
+  background-color: transparent;
 
   transition: var(--standard-transition);
-  transition-property: background-color, border-color;
+  transition-property: background-color, border, fill;
 }
 
-input[type="checkbox"]:checked + .modal-form-checkbox {
+input[type="checkbox"]:checked + .checkbox-label>.modal-form-checkbox {
   background-color: var(--primary-brand-color);
-  border-color: transparent;
+  border: none;
+  fill: var(--light-color);
 }
 .modal-form-checkbox-icon {
   opacity: 0;
-  fill: white;
+  fill: var(--light-color);
   transition: opacity var(--standard-transition);
 }
 input[type="checkbox"]:checked
-  + .modal-form-checkbox
+  + .checkbox-label
+  > .modal-form-checkbox
   > .modal-form-checkbox-icon {
   opacity: 1;
 }
@@ -790,7 +805,7 @@ input[type="checkbox"]:checked
 .form-button {
   align-self: center;
   padding: 16px 32px;
-  width: 169px;
+  min-width: 169px;
   border: none;
   border-radius: 4px;
   background-color: var(--primary-brand-color);
