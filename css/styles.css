@@ -656,8 +656,7 @@ h3 {
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--accent-color);
   transition: background-color var(--standard-transition),
-  border var(--standard-transition),
-  color var(--standard-transition);
+  border var(--standard-transition);
   cursor: pointer;
 }
 .modal-btn:hover,
@@ -781,7 +780,7 @@ h3 {
 }
 
 input[type="checkbox"]:checked + .checkbox-label>.modal-form-checkbox {
-  background-color: var(--primary-brand-color);
+  background-color: var(--pressed-state-color);
   border: none;
   fill: var(--light-color);
 }
